@@ -6,7 +6,6 @@
   padding: 2rem;
   text-align: center;
   font-family: 'Poppins';
-  background: rgb(238, 238, 238);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,15 +13,19 @@
   align-items: center;
 }
 
+body {
+  background: rgb(238, 238, 238);
+}
+
 .die {
-  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
   width: 50px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 3px 5px;
+  cursor: pointer;
 }
 
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,6 +35,11 @@
 
 .game-container{
   & button {
-    width: 100px;
+    width: 150px;
+    padding: 10px;
+  }
+
+  & h1 {
+    font-weight: bold;
   }
 }

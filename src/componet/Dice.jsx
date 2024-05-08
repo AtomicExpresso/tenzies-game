@@ -1,25 +1,20 @@
-import { useState, useEffect } from "react"
+function Dice(props){
 
-function Dice(){
-  const [dice, setDice] = useState(DiceRoll())
+  const mapDiceArray = props.dice.map((item, index) => {
 
-  function DiceRoll() {
-    const array = [];
-
-    for(let i = 0; i < 10; i++){
-      array.push({
-        value: Math.ceil(Math.random() * 6),
-        isPicked: false,
-        id: i + 1
-      })
+    const dieStyle = {
+      backgroundColor: item.isPicked ? '#58e390' : 'white'
     }
 
-    return array
-  }
+    function changeHeld(index) {
+      const newarr = [...props.dice]
+      newarr[index] = {...newarr[index], isPicked: !newarr[index].isPicked}
+      props.setDice(newarr)
+    }
+  
 
-  const mapDiceArray = dice.map(item => {
     return (
-      <div key={item.id} className="die">
+      <div key={index} className="die" style={dieStyle} onClick={() => changeHeld(index)}>
         <h1>{item.value}</h1>
       </div>
     )
