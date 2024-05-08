@@ -14,14 +14,13 @@
 }
 
 body {
-  background: rgb(238, 238, 238);
+  background: rgb(237, 237, 237) !important;
 }
 
 .die {
   border-radius: 10px;
   padding: 10px;
   width: 50px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1px 3px 5px;
   cursor: pointer;
 }
 
@@ -34,6 +33,11 @@ body {
 }
 
 .game-container{
+  & p {
+    max-width: 400px;
+    margin: auto;
+  }
+
   & button {
     width: 150px;
     padding: 10px;
